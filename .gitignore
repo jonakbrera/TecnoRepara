@@ -1,0 +1,24 @@
+# Maven
+target/
+
+# IDEs
+.vscode/
+.idea/
+
+# Archivos compilados
+*.class
+
+# Archivos temporales
+*.log
+
+# Backups
+*.backup
+
+# PDFs generados
+*.pdf
+
+# Excels generados
+*.xlsx
+
+# Repositorio interno (NO subir)
+TecnoRepara/

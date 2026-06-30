@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<BorderPane fx:id="panelPrincipal"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.tecnorepara.controller.DashboardController"
+            stylesheets="@/css/estilos.css"
+            prefWidth="1200"
+            prefHeight="760">
+
+    <top>
+        <HBox alignment="CENTER_LEFT"
+              spacing="20"
+              style="-fx-background-color:white;
+                     -fx-padding:18 25;
+                     -fx-border-color:#E5E7EB;">
+
+            <ImageView fitWidth="45" fitHeight="45" preserveRatio="true">
+                <image>
+                    <Image url="@/imagenes/logo.png"/>
+                </image>
+            </ImageView>
+
+            <Label text="TecnoRepara"
+                   style="-fx-font-size:28px;
+                          -fx-font-weight:bold;
+                          -fx-text-fill:#1E2A38;"/>
+
+            <Label fx:id="lblUltimoAcceso"
+                   style="-fx-font-size:13px;
+                          -fx-text-fill:gray;"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Button text="Actualizar"
+                    onAction="#actualizarDashboard"
+                    styleClass="boton-modificar"/>
+
+            <Label fx:id="lblUsuario"
+                   text="Usuario"
+                   style="-fx-font-size:14px;"/>
+
+            <Label fx:id="lblHora"
+                   style="-fx-font-size:14px;"/>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox spacing="8"
+              prefWidth="220"
+              style="-fx-background-color:#1E2A38;
+                     -fx-padding:22 14;">
+
+            <Button fx:id="btnInicio" text="Inicio" prefWidth="190" onAction="#abrirInicio" styleClass="boton-menu"/>
+            <Button fx:id="btnClientes" text="Clientes" prefWidth="190" onAction="#abrirClientes" styleClass="boton-menu"/>
+            <Button fx:id="btnProductos" text="Productos" prefWidth="190" onAction="#abrirProductos" styleClass="boton-menu"/>
+            <Button fx:id="btnProveedores" text="Proveedores" prefWidth="190" onAction="#abrirProveedores" styleClass="boton-menu"/>
+            <Button fx:id="btnOrdenes" text="Órdenes" prefWidth="190" onAction="#abrirOrdenes" styleClass="boton-menu"/>
+            <Button fx:id="btnPresupuestos" text="Presupuestos" prefWidth="190" onAction="#abrirPresupuestos" styleClass="boton-menu"/>
+            <Button fx:id="btnFacturacion" text="Facturación" prefWidth="190" onAction="#abrirFacturacion" styleClass="boton-menu"/>
+            <Button fx:id="btnReportes" text="Reportes" prefWidth="190" onAction="#abrirReportes" styleClass="boton-menu"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Button text="Abrir carpeta" onAction="#abrirCarpetaProyecto" prefWidth="190" styleClass="boton-secundario"/>
+            <Button text="Backup BD" onAction="#backupBD" prefWidth="190" styleClass="boton-secundario"/>
+            <Button text="Modo Oscuro" onAction="#cambiarTema" prefWidth="190" styleClass="boton-secundario"/>
+            <Button text="Acerca de" onAction="#mostrarAcercaDe" prefWidth="190" styleClass="boton-secundario"/>
+
+            <Button text="Salir"
+                    prefWidth="190"
+                    onAction="#cerrarSesion"
+                    style="-fx-background-color:#DC2626;
+                           -fx-text-fill:white;
+                           -fx-font-size:15px;
+                           -fx-background-radius:8;"/>
+        </VBox>
+    </left>
+
+    <center>
+        <ScrollPane fitToWidth="true"
+                    style="-fx-background-color:#F4F6F8;">
+
+            <VBox spacing="22"
+                  style="-fx-padding:25;
+                         -fx-background-color:#F4F6F8;">
+
+                <Label text="Resumen general"
+                       style="-fx-font-size:30px;
+                              -fx-font-weight:bold;
+                              -fx-text-fill:#1E2A38;"/>
+
+                <GridPane hgap="18" vgap="18">
+
+                    <VBox GridPane.columnIndex="0" GridPane.rowIndex="0"
+                          prefWidth="190" prefHeight="120"
+                          style="-fx-background-color:#2563EB;
+                                 -fx-padding:20;
+                                 -fx-background-radius:15;">
+                        <Label text="Clientes" style="-fx-font-size:17px; -fx-text-fill:white;"/>
+                        <Label fx:id="lblClientes" text="0" style="-fx-font-size:34px; -fx-font-weight:bold; -fx-text-fill:white;"/>
+                    </VBox>
+
+                    <VBox GridPane.columnIndex="1" GridPane.rowIndex="0"
+                          prefWidth="190" prefHeight="120"
+                          style="-fx-background-color:#16A34A;
+                                 -fx-padding:20;
+                                 -fx-background-radius:15;">
+                        <Label text="Productos" style="-fx-font-size:17px; -fx-text-fill:white;"/>
+                        <Label fx:id="lblProductos" text="0" style="-fx-font-size:34px; -fx-font-weight:bold; -fx-text-fill:white;"/>
+                    </VBox>
+
+                    <VBox GridPane.columnIndex="2" GridPane.rowIndex="0"
+                          prefWidth="190" prefHeight="120"
+                          style="-fx-background-color:#F59E0B;
+                                 -fx-padding:20;
+                                 -fx-background-radius:15;">
+                        <Label text="Pendientes" style="-fx-font-size:17px; -fx-text-fill:white;"/>
+                        <Label fx:id="lblPendientes" text="0" style="-fx-font-size:34px; -fx-font-weight:bold; -fx-text-fill:white;"/>
+                    </VBox>
+
+                    <VBox GridPane.columnIndex="0" GridPane.rowIndex="1"
+                          prefWidth="190" prefHeight="120"
+                          style="-fx-background-color:#7C3AED;
+                                 -fx-padding:20;
+                                 -fx-background-radius:15;">
+                        <Label text="Presupuestadas" style="-fx-font-size:17px; -fx-text-fill:white;"/>
+                        <Label fx:id="lblPresupuestadas" text="0" style="-fx-font-size:34px; -fx-font-weight:bold; -fx-text-fill:white;"/>
+                    </VBox>
+
+                    <VBox GridPane.columnIndex="1" GridPane.rowIndex="1"
+                          prefWidth="190" prefHeight="120"
+                          style="-fx-background-color:#059669;
+                                 -fx-padding:20;
+                                 -fx-background-radius:15;">
+                        <Label text="Entregadas" style="-fx-font-size:17px; -fx-text-fill:white;"/>
+                        <Label fx:id="lblEntregadas" text="0" style="-fx-font-size:34px; -fx-font-weight:bold; -fx-text-fill:white;"/>
+                    </VBox>
+
+                    <VBox GridPane.columnIndex="2" GridPane.rowIndex="1"
+                          prefWidth="190" prefHeight="120"
+                          style="-fx-background-color:#DC2626;
+                                 -fx-padding:20;
+                                 -fx-background-radius:15;">
+                        <Label text="Stock bajo" style="-fx-font-size:17px; -fx-text-fill:white;"/>
+                        <Label fx:id="lblStockBajo" text="0" style="-fx-font-size:34px; -fx-font-weight:bold; -fx-text-fill:white;"/>
+                    </VBox>
+
+                </GridPane>
+
+                <HBox spacing="22">
+
+                    <VBox spacing="10"
+                          prefWidth="420"
+                          style="-fx-background-color:white;
+                                 -fx-padding:18;
+                                 -fx-background-radius:15;
+                                 -fx-effect:dropshadow(gaussian,rgba(0,0,0,0.12),10,0,0,3);">
+
+                        <Label text="Órdenes por estado"
+                               style="-fx-font-size:18px;
+                                      -fx-font-weight:bold;"/>
+
+                        <PieChart fx:id="graficoOrdenes"
+                                  prefHeight="260"
+                                  legendVisible="true"/>
+                    </VBox>
+
+                    <VBox spacing="12"
+                          prefWidth="400"
+                          style="-fx-background-color:white;
+                                 -fx-padding:20;
+                                 -fx-background-radius:15;
+                                 -fx-effect:dropshadow(gaussian,rgba(0,0,0,0.12),10,0,0,3);">
+
+                        <Label text="Actividad del sistema"
+                               style="-fx-font-size:18px;
+                                      -fx-font-weight:bold;"/>
+
+                        <Label text="Clientes registrados"/>
+                        <Label text="Productos disponibles"/>
+                        <Label text="Órdenes gestionadas"/>
+                        <Label text="Presupuestos emitidos"/>
+                        <Label text="Facturas registradas"/>
+
+                        <Separator/>
+
+                        <Label text="Estado del sistema"
+                               style="-fx-font-size:16px;
+                                      -fx-font-weight:bold;"/>
+
+                        <Label text="Base de datos conectada"/>
+                        <Label text="Módulos principales activos"/>
+
+                        <Separator/>
+
+                        <Label text="Total facturado"
+                               style="-fx-font-size:16px;
+                                      -fx-font-weight:bold;"/>
+
+                        <Label fx:id="lblFacturado"
+                               text="Gs. 0"
+                               style="-fx-font-size:26px;
+                                      -fx-font-weight:bold;
+                                      -fx-text-fill:#16A34A;"/>
+                    </VBox>
+
+                </HBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

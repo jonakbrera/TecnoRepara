@@ -1,0 +1,339 @@
+/* =========================================================
+   TECNOREPARA - ESTILOS GENERALES
+   ========================================================= */
+
+.root {
+    -fx-font-family: "Segoe UI";
+    -fx-background-color: #F4F6F8;
+}
+
+/* =========================================================
+   TITULOS
+   ========================================================= */
+
+.titulo-modulo {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E2A38;
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.card-modulo {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 12, 0, 0, 3);
+}
+
+/* =========================================================
+   MENU LATERAL
+   ========================================================= */
+
+.menu-lateral {
+    -fx-background-color: #1E2A38;
+}
+
+.boton-menu {
+
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+
+    -fx-font-size: 16px;
+
+    -fx-alignment: CENTER_LEFT;
+
+    -fx-pref-width: 190;
+    -fx-pref-height: 44;
+
+    -fx-padding: 0 0 0 18;
+
+    -fx-background-radius: 8;
+
+}
+
+.boton-menu:hover{
+
+    -fx-background-color:#334155;
+
+}
+
+.boton-activo{
+
+    -fx-background-color:#334155;
+
+    -fx-border-color:#2563EB;
+    -fx-border-width:0 0 0 5;
+
+    -fx-text-fill:white;
+
+    -fx-font-weight:bold;
+
+}
+
+/* =========================================================
+   CAMPOS
+   ========================================================= */
+
+.text-field,
+.password-field,
+.combo-box,
+.text-area,
+.date-picker {
+
+    -fx-background-radius:8;
+    -fx-border-radius:8;
+
+}
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+
+/* GUARDAR */
+
+.boton-guardar{
+
+    -fx-background-color:#16A34A;
+    -fx-text-fill:white;
+
+    -fx-font-weight:bold;
+    -fx-font-size:14px;
+
+    -fx-background-radius:8;
+
+    -fx-padding:8 18;
+
+}
+
+.boton-guardar:hover{
+
+    -fx-background-color:#15803D;
+
+}
+
+/* MODIFICAR */
+
+.boton-modificar{
+
+    -fx-background-color:#2563EB;
+    -fx-text-fill:white;
+
+    -fx-font-weight:bold;
+    -fx-font-size:14px;
+
+    -fx-background-radius:8;
+
+    -fx-padding:8 18;
+
+}
+
+.boton-modificar:hover{
+
+    -fx-background-color:#1D4ED8;
+
+}
+
+/* ELIMINAR */
+
+.boton-eliminar{
+
+    -fx-background-color:#DC2626;
+    -fx-text-fill:white;
+
+    -fx-font-weight:bold;
+    -fx-font-size:14px;
+
+    -fx-background-radius:8;
+
+    -fx-padding:8 18;
+
+}
+
+.boton-eliminar:hover{
+
+    -fx-background-color:#B91C1C;
+
+}
+
+/* LIMPIAR */
+
+.boton-limpiar{
+
+    -fx-background-color:#FACC15;
+    -fx-text-fill:#111827;
+
+    -fx-font-weight:bold;
+    -fx-font-size:14px;
+
+    -fx-background-radius:8;
+
+    -fx-padding:8 18;
+
+}
+
+.boton-limpiar:hover{
+
+    -fx-background-color:#EAB308;
+
+}
+
+/* EXCEL */
+
+.boton-excel{
+
+    -fx-background-color:#107C41;
+    -fx-text-fill:white;
+
+    -fx-font-weight:bold;
+    -fx-font-size:14px;
+
+    -fx-background-radius:8;
+
+    -fx-padding:8 18;
+
+}
+
+.boton-excel:hover{
+
+    -fx-background-color:#0F6B38;
+
+}
+
+/* PDF */
+
+.boton-pdf{
+
+    -fx-background-color:#C62828;
+    -fx-text-fill:white;
+
+    -fx-font-weight:bold;
+    -fx-font-size:14px;
+
+    -fx-background-radius:8;
+
+    -fx-padding:8 18;
+
+}
+
+.boton-pdf:hover{
+
+    -fx-background-color:#A91F1F;
+
+}
+
+/* BOTONES SECUNDARIOS */
+
+.boton-secundario{
+
+    -fx-background-color:#E5E7EB;
+    -fx-text-fill:#111827;
+
+    -fx-font-weight:bold;
+
+    -fx-background-radius:8;
+
+    -fx-padding:8 18;
+
+}
+
+.boton-secundario:hover{
+
+    -fx-background-color:#D1D5DB;
+
+}
+
+/* =========================================================
+   TABLAS
+   ========================================================= */
+
+.table-view{
+
+    -fx-background-radius:10;
+
+}
+
+.table-view .column-header{
+
+    -fx-background-color:#F3F4F6;
+
+}
+
+.table-view .column-header .label{
+
+    -fx-font-weight:bold;
+
+}
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+.label-titulo{
+
+    -fx-font-size:16px;
+    -fx-font-weight:bold;
+
+}
+.table-view {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #E5E7EB;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #F3F4F6;
+    -fx-background-radius: 10 10 0 0;
+}
+
+.table-view .column-header,
+.table-view .filler {
+    -fx-background-color: transparent;
+    -fx-size: 38;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #374151;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #F1F5F9 transparent;
+    -fx-padding: 3;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #F9FAFB;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #DBEAFE;
+    -fx-text-fill: #111827;
+}
+
+.table-row-cell:selected .text {
+    -fx-fill: #111827;
+}
+.contenido-modulo{
+    -fx-padding:20;
+}
+.cabecera-modulo{
+    -fx-padding:20;
+}
+.boton-secundario {
+    -fx-background-color: #E5E7EB;
+    -fx-text-fill: #111827;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 8 18;
+}
+
+.boton-secundario:hover {
+    -fx-background-color: #D1D5DB;
+}

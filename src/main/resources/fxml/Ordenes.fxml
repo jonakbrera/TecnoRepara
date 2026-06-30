@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.tecnorepara.controller.OrdenController"
+            prefWidth="1100"
+            prefHeight="700">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-padding:20;">
+            <Label text="Gestión de Órdenes de Reparación"
+                   styleClass="titulo-modulo"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Label text="🔍 Buscar:"/>
+
+            <TextField fx:id="txtBuscar"
+                       prefWidth="360"
+                       promptText="Cliente, dispositivo, marca, modelo o estado"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="18" styleClass="cabecera-modulo">
+
+            <VBox spacing="15" styleClass="card-modulo">
+
+                <GridPane hgap="15" vgap="12">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50"/>
+                        <ColumnConstraints percentWidth="50"/>
+                    </columnConstraints>
+
+                    <Label text="Cliente" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="cmbCliente"
+                              promptText="Seleccione cliente"
+                              GridPane.rowIndex="1"
+                              GridPane.columnIndex="0"
+                              maxWidth="Infinity"/>
+
+                    <Label text="Estado" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                    <ComboBox fx:id="cmbEstado"
+                              promptText="Estado"
+                              GridPane.rowIndex="1"
+                              GridPane.columnIndex="1"
+                              maxWidth="Infinity"/>
+
+                    <Label text="Dispositivo" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextField fx:id="txtDispositivo"
+                               promptText="Dispositivo"
+                               GridPane.rowIndex="3"
+                               GridPane.columnIndex="0"/>
+
+                    <Label text="Marca" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                    <TextField fx:id="txtMarca"
+                               promptText="Marca"
+                               GridPane.rowIndex="3"
+                               GridPane.columnIndex="1"/>
+
+                    <Label text="Modelo" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                    <TextField fx:id="txtModelo"
+                               promptText="Modelo"
+                               GridPane.rowIndex="5"
+                               GridPane.columnIndex="0"
+                               GridPane.columnSpan="2"/>
+
+                    <Label text="Problema Reportado" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                    <TextArea fx:id="txtProblemaReportado"
+                              promptText="Problema reportado"
+                              prefRowCount="2"
+                              wrapText="true"
+                              GridPane.rowIndex="7"
+                              GridPane.columnIndex="0"
+                              GridPane.columnSpan="2"/>
+
+                    <Label text="Diagnóstico" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+                    <TextArea fx:id="txtDiagnostico"
+                              promptText="Diagnóstico"
+                              prefRowCount="2"
+                              wrapText="true"
+                              GridPane.rowIndex="9"
+                              GridPane.columnIndex="0"
+                              GridPane.columnSpan="2"/>
+
+                    <Label text="Trabajo Realizado" GridPane.rowIndex="10" GridPane.columnIndex="0"/>
+                    <TextArea fx:id="txtTrabajoRealizado"
+                              promptText="Trabajo realizado"
+                              prefRowCount="2"
+                              wrapText="true"
+                              GridPane.rowIndex="11"
+                              GridPane.columnIndex="0"
+                              GridPane.columnSpan="2"/>
+                </GridPane>
+
+                <HBox spacing="12" style="-fx-padding:8 0 0 0;">
+                    <Button text="Guardar"
+                            onAction="#guardar"
+                            styleClass="boton-guardar"/>
+
+                    <Button text="Modificar"
+                            onAction="#modificar"
+                            styleClass="boton-modificar"/>
+
+                    <Button text="Eliminar"
+                            onAction="#eliminar"
+                            styleClass="boton-eliminar"/>
+
+                    <Button text="Limpiar"
+                            onAction="#limpiar"
+                            styleClass="boton-limpiar"/>
+
+                    <Button text="Exportar Excel"
+                            onAction="#exportarExcel"
+                            styleClass="boton-excel"/>
+
+                    <Button text="PDF"
+                            onAction="#generarPdf"
+                            styleClass="boton-pdf"/>
+                </HBox>
+            </VBox>
+
+            <VBox spacing="10" styleClass="card-modulo">
+
+                <Label text="Listado de órdenes"
+                       style="-fx-font-size:18px; -fx-font-weight:bold;"/>
+
+                <TableView fx:id="tablaOrdenes" prefHeight="300">
+                    <columns>
+                        <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
+                        <TableColumn fx:id="colCliente" text="Cliente" prefWidth="200"/>
+                        <TableColumn fx:id="colDispositivo" text="Dispositivo" prefWidth="130"/>
+                        <TableColumn fx:id="colMarca" text="Marca" prefWidth="120"/>
+                        <TableColumn fx:id="colModelo" text="Modelo" prefWidth="120"/>
+                        <TableColumn fx:id="colProblema" text="Problema" prefWidth="230"/>
+                        <TableColumn fx:id="colEstado" text="Estado" prefWidth="140"/>
+                        <TableColumn fx:id="colFechaIngreso" text="Fecha Ingreso" prefWidth="180"/>
+                    </columns>
+                </TableView>
+
+            </VBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>

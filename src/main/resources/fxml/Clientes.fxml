@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.tecnorepara.controller.ClienteController"
+            prefWidth="1100"
+            prefHeight="700">
+
+    <!-- ==================== CABECERA ==================== -->
+
+    <top>
+        <HBox alignment="CENTER_LEFT"
+              spacing="15"
+              styleClass="cabecera-modulo">
+
+            <Label text="Gestión de Clientes"
+                   styleClass="titulo-modulo"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Label text="Buscar:"/>
+
+            <TextField fx:id="txtBuscar"
+                       prefWidth="340"
+                       promptText="DNI, nombre, teléfono o email"/>
+        </HBox>
+    </top>
+
+    <!-- ==================== CONTENIDO ==================== -->
+
+    <center>
+
+        <VBox spacing="18"
+              styleClass="contenido-modulo">
+
+            <!-- FORMULARIO -->
+
+            <VBox spacing="15"
+                  styleClass="card-modulo">
+
+                <GridPane hgap="15"
+                          vgap="12">
+
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50"/>
+                        <ColumnConstraints percentWidth="50"/>
+                    </columnConstraints>
+
+                    <Label text="DNI"
+                           GridPane.rowIndex="0"
+                           GridPane.columnIndex="0"/>
+
+                    <TextField fx:id="txtDni"
+                               promptText="Número de documento"
+                               GridPane.rowIndex="1"
+                               GridPane.columnIndex="0"/>
+
+                    <Label text="Nombre completo"
+                           GridPane.rowIndex="0"
+                           GridPane.columnIndex="1"/>
+
+                    <TextField fx:id="txtNombre"
+                               promptText="Nombre del cliente"
+                               GridPane.rowIndex="1"
+                               GridPane.columnIndex="1"/>
+
+                    <Label text="Teléfono"
+                           GridPane.rowIndex="2"
+                           GridPane.columnIndex="0"/>
+
+                    <TextField fx:id="txtTelefono"
+                               promptText="0981 123456"
+                               GridPane.rowIndex="3"
+                               GridPane.columnIndex="0"/>
+
+                    <Label text="Correo electrónico"
+                           GridPane.rowIndex="2"
+                           GridPane.columnIndex="1"/>
+
+                    <TextField fx:id="txtEmail"
+                               promptText="cliente@email.com"
+                               GridPane.rowIndex="3"
+                               GridPane.columnIndex="1"/>
+
+                    <Label text="Dirección"
+                           GridPane.rowIndex="4"
+                           GridPane.columnIndex="0"/>
+
+                    <TextField fx:id="txtDireccion"
+                               promptText="Dirección completa"
+                               GridPane.rowIndex="5"
+                               GridPane.columnIndex="0"
+                               GridPane.columnSpan="2"/>
+
+                </GridPane>
+
+                <!-- BOTONES -->
+
+                <HBox spacing="10">
+
+                    <Button text="Guardar"
+                            onAction="#guardar"
+                            styleClass="boton-guardar"/>
+
+                    <Button text="Modificar"
+                            onAction="#modificar"
+                            styleClass="boton-modificar"/>
+
+                    <Button text="Eliminar"
+                            onAction="#eliminar"
+                            styleClass="boton-eliminar"/>
+
+                    <Button text="Limpiar"
+                            onAction="#limpiar"
+                            styleClass="boton-limpiar"/>
+
+                    <Button text="Exportar Excel"
+                            onAction="#exportarExcel"
+                            styleClass="boton-excel"/>
+
+                </HBox>
+
+            </VBox>
+
+            <!-- TABLA -->
+
+            <VBox spacing="10"
+                  styleClass="card-modulo">
+
+                <Label text="Listado de clientes"
+                       style="-fx-font-size:18px;
+                              -fx-font-weight:bold;"/>
+
+                <TableView fx:id="tablaClientes"
+                           prefHeight="340">
+
+                    <columns>
+
+                        <TableColumn fx:id="colId"
+                                     text="ID"
+                                     prefWidth="60"/>
+
+                        <TableColumn fx:id="colDni"
+                                     text="DNI"
+                                     prefWidth="130"/>
+
+                        <TableColumn fx:id="colNombre"
+                                     text="Nombre"
+                                     prefWidth="250"/>
+
+                        <TableColumn fx:id="colTelefono"
+                                     text="Teléfono"
+                                     prefWidth="150"/>
+
+                        <TableColumn fx:id="colEmail"
+                                     text="Email"
+                                     prefWidth="250"/>
+
+                        <TableColumn fx:id="colDireccion"
+                                     text="Dirección"
+                                     prefWidth="320"/>
+
+                    </columns>
+
+                </TableView>
+
+            </VBox>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

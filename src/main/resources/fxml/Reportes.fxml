@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.tecnorepara.controller.ReporteController"
+            prefWidth="1100"
+            prefHeight="700">
+
+    <top>
+        <HBox alignment="CENTER_LEFT"
+              spacing="15"
+              style="-fx-padding:20;">
+
+            <Label text="Reportes del Sistema"
+                   style="-fx-font-size:28px; -fx-font-weight:bold;"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Button text="🔄 Actualizar Reportes"
+                    onAction="#actualizarReportes"
+                    style="-fx-background-color:#2563EB;
+                           -fx-text-fill:white;
+                           -fx-font-weight:bold;
+                           -fx-background-radius:8;
+                           -fx-padding:8 14;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="18"
+              style="-fx-padding:25;">
+
+            <GridPane hgap="18" vgap="18">
+
+                <VBox GridPane.columnIndex="0" GridPane.rowIndex="0"
+                      prefWidth="220" prefHeight="120"
+                      style="-fx-background-color:#2563EB;
+                             -fx-padding:18;
+                             -fx-background-radius:15;
+                             -fx-effect:dropshadow(gaussian,rgba(0,0,0,0.18),10,0,0,3);">
+
+                    <Label text="👥 Clientes"
+                           style="-fx-text-fill:white; -fx-font-size:16px;"/>
+
+                    <Label fx:id="lblClientes"
+                           text="0"
+                           style="-fx-text-fill:white; -fx-font-size:34px; -fx-font-weight:bold;"/>
+                </VBox>
+
+                <VBox GridPane.columnIndex="1" GridPane.rowIndex="0"
+                      prefWidth="220" prefHeight="120"
+                      style="-fx-background-color:#16A34A;
+                             -fx-padding:18;
+                             -fx-background-radius:15;
+                             -fx-effect:dropshadow(gaussian,rgba(0,0,0,0.18),10,0,0,3);">
+
+                    <Label text="📦 Productos"
+                           style="-fx-text-fill:white; -fx-font-size:16px;"/>
+
+                    <Label fx:id="lblProductos"
+                           text="0"
+                           style="-fx-text-fill:white; -fx-font-size:34px; -fx-font-weight:bold;"/>
+                </VBox>
+
+                <VBox GridPane.columnIndex="2" GridPane.rowIndex="0"
+                      prefWidth="220" prefHeight="120"
+                      style="-fx-background-color:#F59E0B;
+                             -fx-padding:18;
+                             -fx-background-radius:15;
+                             -fx-effect:dropshadow(gaussian,rgba(0,0,0,0.18),10,0,0,3);">
+
+                    <Label text="🔧 Órdenes"
+                           style="-fx-text-fill:white; -fx-font-size:16px;"/>
+
+                    <Label fx:id="lblOrdenes"
+                           text="0"
+                           style="-fx-text-fill:white; -fx-font-size:34px; -fx-font-weight:bold;"/>
+                </VBox>
+
+                <VBox GridPane.columnIndex="0" GridPane.rowIndex="1"
+                      prefWidth="220" prefHeight="120"
+                      style="-fx-background-color:#7C3AED;
+                             -fx-padding:18;
+                             -fx-background-radius:15;
+                             -fx-effect:dropshadow(gaussian,rgba(0,0,0,0.18),10,0,0,3);">
+
+                    <Label text="💰 Presupuestos"
+                           style="-fx-text-fill:white; -fx-font-size:16px;"/>
+
+                    <Label fx:id="lblPresupuestos"
+                           text="0"
+                           style="-fx-text-fill:white; -fx-font-size:34px; -fx-font-weight:bold;"/>
+                </VBox>
+
+                <VBox GridPane.columnIndex="1" GridPane.rowIndex="1"
+                      prefWidth="220" prefHeight="120"
+                      style="-fx-background-color:#DC2626;
+                             -fx-padding:18;
+                             -fx-background-radius:15;
+                             -fx-effect:dropshadow(gaussian,rgba(0,0,0,0.18),10,0,0,3);">
+
+                    <Label text="🧾 Facturas"
+                           style="-fx-text-fill:white; -fx-font-size:16px;"/>
+
+                    <Label fx:id="lblFacturas"
+                           text="0"
+                           style="-fx-text-fill:white; -fx-font-size:34px; -fx-font-weight:bold;"/>
+                </VBox>
+
+                <VBox GridPane.columnIndex="2" GridPane.rowIndex="1"
+                      prefWidth="220" prefHeight="120"
+                      style="-fx-background-color:#0891B2;
+                             -fx-padding:18;
+                             -fx-background-radius:15;
+                             -fx-effect:dropshadow(gaussian,rgba(0,0,0,0.18),10,0,0,3);">
+
+                    <Label text="⚠ Stock bajo"
+                           style="-fx-text-fill:white; -fx-font-size:16px;"/>
+
+                    <Label fx:id="lblStockBajo"
+                           text="0"
+                           style="-fx-text-fill:white; -fx-font-size:34px; -fx-font-weight:bold;"/>
+                </VBox>
+
+            </GridPane>
+
+            <VBox spacing="10"
+                  style="-fx-background-color:white;
+                         -fx-padding:25;
+                         -fx-background-radius:15;
+                         -fx-effect:dropshadow(gaussian,rgba(0,0,0,0.15),10,0,0,3);">
+
+                <Label text="TOTAL FACTURADO"
+                       style="-fx-font-size:16px;
+                              -fx-font-weight:bold;
+                              -fx-text-fill:#374151;"/>
+
+                <Label fx:id="lblTotalFacturado"
+                       text="Gs. 0"
+                       style="-fx-font-size:42px;
+                              -fx-font-weight:bold;
+                              -fx-text-fill:#16A34A;"/>
+            </VBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>
