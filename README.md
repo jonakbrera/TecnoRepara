@@ -1,6 +1,6 @@
 # TecnoRepara
 
-Sistema de gestión para talleres de reparación de dispositivos electrónicos.
+Sistema Integral de Gestión para Taller de Reparación - Proyecto UAP
 
 ## Tecnologías
 
